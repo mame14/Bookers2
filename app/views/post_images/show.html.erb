@@ -1,0 +1,12 @@
+<div>
+  <%= image_tag @post_image.get_image %>
+    <p>Image:<%= image_tag @post_image.user.get_profile_image(100,100) %></p>
+    <p>name:<%= post_image.name %></p>
+    <p>introduction:<%= post_image.introduction %></p>
+    <p>Title:<%= @post_image.title %></p>
+    <p>Opinion:<%= @post_image.opinion %></p>
+  <% if @post_image.user == current_user %>
+    <%= link_to "Destroy", post_image_path(@post_image), method: :delete %>
+  <% end %>
+  
+</div>

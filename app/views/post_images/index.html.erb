@@ -1,0 +1,14 @@
+<% @post_images.each do |post_image| %>
+<div>
+  <%= link_to post_image_path(post_image.id) do %>
+    <%= image_tag post_image.get_image %>
+  <% end %>
+  
+  <%= image_tag post_image.get_image %>
+  <p>Image:<%= image_tag post_image.user.get_profile_image(100,100) %></p>
+  <p>name:<%= post_image.name %></p>
+  <p>introduction:<%= post_image.introduction %></p>
+  <p>Title:<%= post_image.title %></p>
+  <p>Introduction:<%= post_image.introduction %></p>
+</div>
+<% end %>

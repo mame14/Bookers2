@@ -1,0 +1,35 @@
+<main>
+  <%= flash[:notice] %>
+
+  <div class="container px-5 px-se0">
+    <div class="row">
+      <div class="col-md-3">
+        <h2>User info</h2>
+        <%= image_tag user.get_profile_image(100,100) %>
+        <table class="table">
+          <tr>
+            <th>name<%= user.name %></th>
+          </tr>
+          <tr>
+            <th>introduction<%= user.introduction %></th>
+          </tr>
+        </table>
+        <div class="row">
+          <%= link_to edit_user_path(user.id), class: "btn btn-outline-secondary btn-sm mt-4" do %>
+            <i class="fas fa-user-cog"></i>
+          <% end %>
+        </div>
+      </div>
+    </div>
+
+  <h2>New book</h2>
+  <%= form_with model: book do |f| %>
+    <h4>Title</h4>
+    <%= f.text_field :title %>
+
+    <h4>Opinion</h4>
+    <%= f.text_area :opinion %>
+
+    <%= f.submit 'Create Book' %>
+  <% end %>
+</main>
